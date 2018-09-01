@@ -15,7 +15,7 @@ composer require robindrost/prismic-integration-field-laravel
 You can use the implementation of the integration field on your model in two ways.
 
 1. You either specify the fields in the database that are required by the integration field.
-2. Or your define attribute methods like `getImagePathAttribute()`.
+2. Or your define attribute accessor methods like `getImageUrlAttribute()`.
 
 The HasIntegrationField trait excepts that you use the default timestamp fields of Laravel. If however you do not use these, please implement the `toIntegrationField()` method yourself.
 
