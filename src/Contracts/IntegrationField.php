@@ -37,14 +37,14 @@ interface IntegrationField extends Arrayable
     public function getDescription() : string;
 
     /**
-     * @param string $path
+     * @param string $url
      */
-    public function setImagePath(string $path);
+    public function setImageUrl(string $url);
 
     /**
      * @return string
      */
-    public function getImagePath() : string;
+    public function getImageUrl() : string;
 
     /**
      * @param int $timestamp

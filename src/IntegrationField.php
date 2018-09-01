@@ -25,7 +25,7 @@ class IntegrationField implements IntegrationFieldContract
     /**
      * @var string
      */
-    protected $imagePath;
+    protected $imageUrl;
 
     /**
      * @var int
@@ -88,17 +88,17 @@ class IntegrationField implements IntegrationFieldContract
     /**
      * @inheritDoc
      */
-    public function setImagePath(string $path)
+    public function setImageUrl(string $url)
     {
-        $this->imagePath = $path;
+        $this->imageUrl = $url;
     }
 
     /**
      * @inheritDoc
      */
-    public function getImagePath() : string
+    public function getImageUrl() : string
     {
-        return $this->imagePath;
+        return $this->imageUrl;
     }
 
     /**
@@ -142,7 +142,7 @@ class IntegrationField implements IntegrationFieldContract
             'id' => $this->getId(),
             'title' => $this->getTitle(),
             'description' => $this->getDescription(),
-            'image_path' => $this->getImagePath(),
+            'image_url' => $this->getImageUrl(),
             'updated_at' => $this->getUpdatedAt(),
             'blob' => $this->getBlob(),
         ];

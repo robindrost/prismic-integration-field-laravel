@@ -11,7 +11,7 @@ trait HasIntegrationField
         $integrationField->setId($this->id);
         $integrationField->setTitle($this->title);
         $integrationField->setDescription($this->description);
-        $integrationField->setImagePath($this->image_path);
+        $integrationField->setImageUrl($this->image_url);
         $integrationField->setUpdatedAt($this->updated_at->timestamp);
         $integrationField->setBlob([
             'id' => $this->id,

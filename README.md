@@ -17,6 +17,14 @@ The HasIntegrationField trait excepts that you use the default timestamp fields 
 
 #### Model implementation example
 
+You model must include these fields (or override the trait method) or method accessors.
+
+- id
+- title
+- description
+- image_url
+- updated_at
+
 Please note that I use a mix of option 1 and 2 here just as an example.
 
 ```
@@ -32,7 +40,7 @@ class MyModel extends Model implements ModelToIntegrationField
     ];
 
     // Using a getter method
-    public function getImagePathAttribute()
+    public function getImageUrlAttribute()
     {
         return 'https://via.placeholder.com/350x150';
     }
@@ -58,11 +66,11 @@ class MyController extends Controller
 {
     public function myApiMethodCallback()
     {
-        $models = MyModel::all();
+        $models = MyModel::paginate(50);
 
         return [
             'result_size' => $models->total(),
-            'results' => $models->toArray(),
+            'results' => $models->getCollection()->toArray(),
         ];
     }
 }

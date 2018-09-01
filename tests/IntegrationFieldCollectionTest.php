@@ -21,7 +21,7 @@ class IntegrationFieldCollectionTest extends TestCase
             public $id = 'test';
             public $title = 'test';
             public $description = 'test';
-            public $image_path = 'test';
+            public $image_url = 'test';
             public $updated_at;
 
             public function __construct()

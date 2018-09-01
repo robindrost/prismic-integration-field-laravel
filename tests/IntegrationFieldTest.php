@@ -10,7 +10,7 @@ class IntegrationFieldTest extends TestCase
     const TEST_ID = 'test_id';
     const TEST_TITLE = 'test_title';
     const TEST_DESCRIPTION = 'test_description';
-    const TEST_IMAGE_PATH = 'test_image_path';
+    const TEST_IMAGE_URL = 'test_image_url';
     const TEST_UPDATED_AT = 123456789;
 
     /**
@@ -53,8 +53,8 @@ class IntegrationFieldTest extends TestCase
     {
         $integrationField = new IntegrationField;
 
-        $integrationField->setImagePath(self::TEST_IMAGE_PATH);
-        $this->assertEquals($integrationField->getImagePath(), self::TEST_IMAGE_PATH);
+        $integrationField->setImageUrl(self::TEST_IMAGE_URL);
+        $this->assertEquals($integrationField->getImageUrl(), self::TEST_IMAGE_URL);
     }
 
     /**
@@ -89,7 +89,7 @@ class IntegrationFieldTest extends TestCase
         $integrationField->setId(self::TEST_ID);
         $integrationField->setTitle(self::TEST_TITLE);
         $integrationField->setDescription(self::TEST_DESCRIPTION);
-        $integrationField->setImagePath(self::TEST_IMAGE_PATH);
+        $integrationField->setImageUrl(self::TEST_IMAGE_URL);
         $integrationField->setUpdatedAt(self::TEST_UPDATED_AT);
         $integrationField->setBlob([]);
 
@@ -98,7 +98,7 @@ class IntegrationFieldTest extends TestCase
         $this->assertArrayHasKey('id', $arr);
         $this->assertArrayHasKey('title', $arr);
         $this->assertArrayHasKey('description', $arr);
-        $this->assertArrayHasKey('image_path', $arr);
+        $this->assertArrayHasKey('image_url', $arr);
         $this->assertArrayHasKey('updated_at', $arr);
         $this->assertArrayHasKey('blob', $arr);
     }
