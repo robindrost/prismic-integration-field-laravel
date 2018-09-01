@@ -17,25 +17,13 @@ You can use the implementation of the integration field on your model in two way
 1. You either specify the fields in the database that are required by the integration field.
 2. Or your define attribute accessor methods like `getImageUrlAttribute()`.
 
-The HasIntegrationField trait excepts that you use the default timestamp fields of Laravel. If however you do not use these, please implement the `toIntegrationField()` method yourself.
-
 ### Model implementation example
-
-You model must include these fields (or override the trait method) or method accessors.
-
-- id
-- title
-- description
-- image_url
-- updated_at
 
 Please note that I use a mix of option 1 and 2 here just as an example.
 
 ```
 class MyModel extends Model implements ModelToIntegrationField
 {
-    use HasIntegrationField;
-
     // Using existing database fields
     public $fillable = [
         'id',
@@ -47,6 +35,20 @@ class MyModel extends Model implements ModelToIntegrationField
     public function getImageUrlAttribute()
     {
         return 'https://via.placeholder.com/350x150';
+    }
+
+    // Convert this model to an integration field.
+    public function toIntegrationField()
+    {
+        IntegrationField::create()
+            ->setId($this->id)
+            ->setTitle($this->title)
+            ->setDescription($this->description)
+            ->setImageUrl($this->image_url)
+            ->setUpdatedAt($this->updated_at->timestamp)
+            ->setBlob([
+                'id' => $this->id,
+            ]);
     }
 }
 ```

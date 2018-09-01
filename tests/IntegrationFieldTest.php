@@ -102,4 +102,12 @@ class IntegrationFieldTest extends TestCase
         $this->assertArrayHasKey('last_update', $arr);
         $this->assertArrayHasKey('blob', $arr);
     }
+
+    /**
+     * @test
+     */
+    public function itCanCreateANewInstance()
+    {
+        $this->assertInstanceOf(IntegrationField::class, IntegrationField::create());
+    }
 }

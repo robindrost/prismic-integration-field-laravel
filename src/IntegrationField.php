@@ -147,4 +147,14 @@ class IntegrationField implements IntegrationFieldContract
             'blob' => $this->getBlob(),
         ];
     }
+
+    /**
+     * Helper method that return a new instance.
+     *
+     * @return IntegrationFieldContract
+     */
+    public static function create() : IntegrationFieldContract
+    {
+        return new static;
+    }
 }

@@ -16,7 +16,7 @@ class IntegrationFieldCollection extends Collection
     public function toArray()
     {
         return array_map(function (ModelToIntegrationField $model) {
-            return $model->toIntegrationField();
+            return $model->toIntegrationField()->toArray();
         }, $this->sortByDesc('updated_at')->items);
     }
 }

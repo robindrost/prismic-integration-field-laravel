@@ -9,5 +9,5 @@ interface ModelToIntegrationField
      *
      * @return array
      */
-    public function toIntegrationField() : array;
+    public function toIntegrationField() : IntegrationField;
 }
