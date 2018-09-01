@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-composer require robindrost/prismic-integration-field
+composer require robindrost/prismic-integration-field-laravel
 ```
 
 ## Usage
