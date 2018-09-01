@@ -104,7 +104,7 @@ And choose the service provider from this package.
 protected $routeMiddleware = [
 
 ....
-'prismic.verify.access.token' => 'RobinDrost\PrismicIntegrationField\Http\Middleware\VerifyAccessToken',
+'prismic.verify.access.token' => \RobinDrost\PrismicIntegrationField\Http\Middleware\VerifyAccessToken::class,
 
 ];
 ```
