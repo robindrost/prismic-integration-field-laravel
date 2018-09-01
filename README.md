@@ -1,5 +1,9 @@
 # Prismic integration field for Laravel
 
+This package allows you to use Eloquent models as Prismic integration fields. You must implement an interface and have an option to use the trait on your models.
+
+The package also provides a middleware that will verify the access tokens from Prismic.
+
 ## Installation
 
 ```

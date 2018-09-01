@@ -26,5 +26,12 @@
     "psr-4": {
       "RobinDrost\\PrismicIntegrationField\\Tests\\": "tests/"
     }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "RobinDrost\\PrismicIntegrationField\\Providers\\ServiceProvider"
+      ]
+    }
   }
 }
