@@ -15,7 +15,7 @@ You can use the implementation of the integration field on your model in two way
 
 The HasIntegrationField trait excepts that you use the default timestamp fields of Laravel. If however you do not use these, please implement the `toIntegrationField()` method yourself.
 
-#### Model implementation example
+### Model implementation example
 
 You model must include these fields (or override the trait method) or method accessors.
 
@@ -47,7 +47,7 @@ class MyModel extends Model implements ModelToIntegrationField
 }
 ```
 
-#### Collection implementation
+### Collection implementation
 
 ```
 // Override Laravels newCollectiom method:
@@ -77,3 +77,36 @@ class MyController extends Controller
 ```
 
 And thats about it. Prismic can now handle the array returned by your collection.
+
+## Working with access tokens
+
+This package also provide an easy way of protecting routes with access tokens. Prismic allows you to define access tokens for each integration field. These access tokens need to be defined in the config file and used by the middleware provided by this package.
+
+First publish the configuration file to your config folder.
+
+```
+php artisan vendor:publish --tag=config --provider="RobinDrost\PrismicIntegrationField\Providers\ServiceProvider"
+```
+
+Now add access tokens inside the added configuration file. This is just an array of strings.
+
+### Apply the middleware on your routes
+
+Add the middleware to your app/Http/Kernel.php.
+
+```
+protected $routeMiddleware = [
+
+....
+'prismic.verify.access.token' => 'RobinDrost\PrismicIntegrationField\Http\Middleware\VerifyAccessToken',
+
+];
+```
+
+Apply the middleware on your api routes:
+
+```
+Route::middleware('prismic.verify.access.token')->get('/your-path', 'YourController@index');
+```
+
+Now only allowed access tokens will reach the controller.
