@@ -89,8 +89,10 @@ This package also provide an easy way of protecting routes with access tokens. P
 1. First publish the configuration file to your config folder.
 
 ```
-php artisan vendor:publish --tag=config --provider="RobinDrost\PrismicIntegrationField\Providers\ServiceProvider"
+php artisan vendor:publish
 ```
+
+And choose the service provider from this package.
 
 2. Now add access tokens inside the added configuration file. This is just an array of strings.
 
