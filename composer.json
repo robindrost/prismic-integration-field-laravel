@@ -8,7 +8,6 @@
     }
   ],
   "license": "MIT",
-  "version": "0.0.7",
   "description": "A package that allows you to convert your models or collection of models to an Prismic integration field ready array.",
   "require": {
     "php": "^7.1",
