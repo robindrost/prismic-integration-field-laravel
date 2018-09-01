@@ -22,6 +22,9 @@ You can use the implementation of the integration field on your model in two way
 Please note that I use a mix of option 1 and 2 here just as an example.
 
 ```
+use RobinDrost\PrismicIntegrationField\IntegrationField;
+use RobinDrost\PrismicIntegrationField\Contracts\IntegrationField as IntegrationFieldContract;
+
 class MyModel extends Model implements ModelToIntegrationField
 {
     // Using existing database fields
@@ -38,7 +41,7 @@ class MyModel extends Model implements ModelToIntegrationField
     }
 
     // Convert this model to an integration field.
-    public function toIntegrationField()
+    public function toIntegrationField() : IntegrationFieldContract
     {
         IntegrationField::create()
             ->setId($this->id)
