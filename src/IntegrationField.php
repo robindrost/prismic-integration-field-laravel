@@ -143,7 +143,7 @@ class IntegrationField implements IntegrationFieldContract
             'title' => $this->getTitle(),
             'description' => $this->getDescription(),
             'image_url' => $this->getImageUrl(),
-            'updated_at' => $this->getUpdatedAt(),
+            'last_update' => $this->getUpdatedAt(),
             'blob' => $this->getBlob(),
         ];
     }

@@ -99,7 +99,7 @@ class IntegrationFieldTest extends TestCase
         $this->assertArrayHasKey('title', $arr);
         $this->assertArrayHasKey('description', $arr);
         $this->assertArrayHasKey('image_url', $arr);
-        $this->assertArrayHasKey('updated_at', $arr);
+        $this->assertArrayHasKey('last_update', $arr);
         $this->assertArrayHasKey('blob', $arr);
     }
 }
