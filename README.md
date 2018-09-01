@@ -86,17 +86,17 @@ And thats about it. Prismic can now handle the array returned by your collection
 
 This package also provide an easy way of protecting routes with access tokens. Prismic allows you to define access tokens for each integration field. These access tokens need to be defined in the config file and used by the middleware provided by this package.
 
-First publish the configuration file to your config folder.
+1. First publish the configuration file to your config folder.
 
 ```
 php artisan vendor:publish --tag=config --provider="RobinDrost\PrismicIntegrationField\Providers\ServiceProvider"
 ```
 
-Now add access tokens inside the added configuration file. This is just an array of strings.
+2. Now add access tokens inside the added configuration file. This is just an array of strings.
 
 ### Apply the middleware on your routes
 
-Add the middleware to your app/Http/Kernel.php.
+3. Add the middleware to your app/Http/Kernel.php.
 
 ```
 protected $routeMiddleware = [
@@ -107,7 +107,7 @@ protected $routeMiddleware = [
 ];
 ```
 
-Apply the middleware on your api routes:
+4. Apply the middleware on your api routes:
 
 ```
 Route::middleware('prismic.verify.access.token')->get('/your-path', 'YourController@index');
