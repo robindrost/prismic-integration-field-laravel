@@ -69,7 +69,7 @@ class MyController extends Controller
         $models = MyModel::paginate(50);
 
         return [
-            'result_size' => $models->total(),
+            'results_size' => $models->total(),
             'results' => $models->getCollection()->toArray(),
         ];
     }
