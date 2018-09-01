@@ -2,7 +2,9 @@
 
 namespace RobinDrost\PrismicIntegrationField\Contracts;
 
-interface IntegrationField
+use Illuminate\Contracts\Support\Arrayable;
+
+interface IntegrationField extends Arrayable
 {
     /**
      * @param mixed $id

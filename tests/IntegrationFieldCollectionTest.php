@@ -40,12 +40,5 @@ class IntegrationFieldCollectionTest extends TestCase
         $arr = $stub->newCollection()->toArray();
 
         $this->assertCount(1, $arr);
-
-        $this->assertArrayHasKey('id', $arr[0]);
-        $this->assertArrayHasKey('title', $arr[0]);
-        $this->assertArrayHasKey('description', $arr[0]);
-        $this->assertArrayHasKey('image_path', $arr[0]);
-        $this->assertArrayHasKey('updated_at', $arr[0]);
-        $this->assertArrayHasKey('blob', $arr[0]);
     }
 }

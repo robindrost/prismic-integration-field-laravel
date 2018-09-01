@@ -78,4 +78,28 @@ class IntegrationFieldTest extends TestCase
         $integrationField->setBlob([]);
         $this->assertEquals($integrationField->getBlob(), []);
     }
+
+    /**
+     * @test
+     */
+    public function itCanConvertTheObjectToAnArray()
+    {
+        $integrationField = new IntegrationField;
+
+        $integrationField->setId(self::TEST_ID);
+        $integrationField->setTitle(self::TEST_TITLE);
+        $integrationField->setDescription(self::TEST_DESCRIPTION);
+        $integrationField->setImagePath(self::TEST_IMAGE_PATH);
+        $integrationField->setUpdatedAt(self::TEST_UPDATED_AT);
+        $integrationField->setBlob([]);
+
+        $arr = $integrationField->toArray();
+
+        $this->assertArrayHasKey('id', $arr);
+        $this->assertArrayHasKey('title', $arr);
+        $this->assertArrayHasKey('description', $arr);
+        $this->assertArrayHasKey('image_path', $arr);
+        $this->assertArrayHasKey('updated_at', $arr);
+        $this->assertArrayHasKey('blob', $arr);
+    }
 }
