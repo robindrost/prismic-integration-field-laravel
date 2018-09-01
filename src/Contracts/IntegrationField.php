@@ -14,7 +14,7 @@ interface IntegrationField extends Arrayable
     /**
      * @return mixed
      */
-    public function getId();
+    public function getId() : string;
 
     /**
      * @param string $title

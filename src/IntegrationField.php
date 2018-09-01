@@ -48,9 +48,9 @@ class IntegrationField implements IntegrationFieldContract
     /**
      * @inheritDoc
      */
-    public function getId()
+    public function getId() : string
     {
-        return $this->id;
+        return (string)$this->id;
     }
 
     /**
