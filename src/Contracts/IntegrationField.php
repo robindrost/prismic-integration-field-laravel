@@ -9,7 +9,7 @@ interface IntegrationField extends Arrayable
     /**
      * @param mixed $id
      */
-    public function setId($id);
+    public function setId($id) : IntegrationField;
 
     /**
      * @return mixed
@@ -19,7 +19,7 @@ interface IntegrationField extends Arrayable
     /**
      * @param string $title
      */
-    public function setTitle(string $title);
+    public function setTitle(string $title) : IntegrationField;
 
     /**
      * @return string
@@ -29,7 +29,7 @@ interface IntegrationField extends Arrayable
     /**
      * @param string $description
      */
-    public function setDescription(string $description);
+    public function setDescription(string $description) : IntegrationField;
 
     /**
      * @return string
@@ -39,7 +39,7 @@ interface IntegrationField extends Arrayable
     /**
      * @param string $url
      */
-    public function setImageUrl(string $url);
+    public function setImageUrl(string $url) : IntegrationField;
 
     /**
      * @return string
@@ -49,7 +49,7 @@ interface IntegrationField extends Arrayable
     /**
      * @param int $timestamp
      */
-    public function setUpdatedAt(int $timestamp);
+    public function setUpdatedAt(int $timestamp) : IntegrationField;
 
     /**
      * @return int
@@ -61,7 +61,7 @@ interface IntegrationField extends Arrayable
      *
      * @param array $data
      */
-    public function setBlob(array $data);
+    public function setBlob(array $data) : IntegrationField;
 
     /**
      * Get an array of fields defined to be returned from Prismic.

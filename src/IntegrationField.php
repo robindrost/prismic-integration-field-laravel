@@ -40,9 +40,10 @@ class IntegrationField implements IntegrationFieldContract
     /**
      * @inheritDoc
      */
-    public function setId($id)
+    public function setId($id) : IntegrationFieldContract
     {
         $this->id = $id;
+        return $this;
     }
 
     /**
@@ -56,9 +57,10 @@ class IntegrationField implements IntegrationFieldContract
     /**
      * @inheritDoc
      */
-    public function setTitle(string $title)
+    public function setTitle(string $title) : IntegrationFieldContract
     {
         $this->title = $title;
+        return $this;
     }
 
     /**
@@ -72,9 +74,10 @@ class IntegrationField implements IntegrationFieldContract
     /**
      * @inheritDoc
      */
-    public function setDescription(string $description)
+    public function setDescription(string $description) : IntegrationFieldContract
     {
         $this->description = $description;
+        return $this;
     }
 
     /**
@@ -88,9 +91,10 @@ class IntegrationField implements IntegrationFieldContract
     /**
      * @inheritDoc
      */
-    public function setImageUrl(string $url)
+    public function setImageUrl(string $url) : IntegrationFieldContract
     {
         $this->imageUrl = $url;
+        return $this;
     }
 
     /**
@@ -104,9 +108,10 @@ class IntegrationField implements IntegrationFieldContract
     /**
      * @inheritDoc
      */
-    public function setUpdatedAt(int $timestamp)
+    public function setUpdatedAt(int $timestamp) : IntegrationFieldContract
     {
         $this->updatedAt = $timestamp;
+        return $this;
     }
 
     /**
@@ -120,9 +125,10 @@ class IntegrationField implements IntegrationFieldContract
     /**
      * @inheritDoc
      */
-    public function setBlob(array $data)
+    public function setBlob(array $data) : IntegrationFieldContract
     {
         $this->blob = $data;
+        return $this;
     }
 
     /**
