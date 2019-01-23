@@ -77,10 +77,10 @@ class MyController extends Controller
     {
         $models = MyModel::paginate(50);
 
-        return [
+        return response()->json([
             'results_size' => $models->total(),
-            'results' => $models->getCollection()->toArray(),
-        ];
+            'results' => $models->getCollection(),
+        ]);
     }
 }
 ```
