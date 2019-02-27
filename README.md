@@ -79,7 +79,7 @@ class MyController extends Controller
 
         return response()->json([
             'results_size' => $models->total(),
-            'results' => $models->getCollection(),
+            'results' => $models->getCollection()->toArray(),
         ]);
     }
 }
